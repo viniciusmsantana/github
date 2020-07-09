@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GitHub Repos</string>
+
+    <!-- App Titles -->
+    <string name="app_title_default">Repos</string>
+
+    <!-- Error Messages -->
+    <string name="error_no_pr_found">No pull requests found!</string>
+</resources>

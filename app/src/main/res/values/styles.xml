@@ -1,0 +1,29 @@
+<resources>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+        <item name="colorSurface">@color/colorSurface</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorOnSurface">#212121</item>
+        <item name="android:textViewStyle">@style/TextViewDefault</item>
+    </style>
+
+    <style name="TextViewDefault" parent="android:Widget.TextView">
+        <item name="android:textSize">@dimen/text_regular</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <style name="TextViewHeader" parent="android:Widget.TextView">
+        <item name="android:textSize">@dimen/text_large</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="TextViewSmall" parent="android:Widget.TextView">
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:fontFamily">@font/roboto_light</item>
+    </style>
+</resources>

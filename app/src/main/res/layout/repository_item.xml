@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="repo"
+            type="com.fromthebasement.githubrepos.model.RepoShort" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_regular"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="@dimen/margin_regular"
+        app:cardElevation="@dimen/margin_small">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_regular">
+
+            <TextView
+                android:id="@+id/text_repo_name"
+                style="@style/TextViewHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:maxLines="1"
+                android:text="@{repo.name}"
+                app:layout_constraintEnd_toStartOf="@+id/text_forks"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Repo Name" />
+
+            <ImageView
+                android:id="@+id/img_owner_avatar"
+                avatarUrl="@{repo.owner.avatarUrl}"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/margin_small"
+                android:scaleType="matrix"
+                android:adjustViewBounds="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_repo_name" />
+
+            <TextView
+                android:id="@+id/text_owner_name"
+                style="@style/TextViewSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{repo.owner.name}"
+                android:layout_marginStart="@dimen/margin_small"
+                app:layout_constraintStart_toEndOf="@+id/img_owner_avatar"
+                app:layout_constraintTop_toTopOf="@+id/img_owner_avatar"
+                app:layout_constraintBottom_toBottomOf="@+id/img_owner_avatar"
+                tools:text="Repo Name" />
+
+
+            <TextView
+                android:id="@+id/text_forks"
+                style="@style/TextViewSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{repo.forks}"
+                app:layout_constraintBottom_toBottomOf="@+id/img_fork"
+                app:layout_constraintEnd_toStartOf="@+id/img_fork"
+                app:layout_constraintTop_toTopOf="@+id/img_fork"
+                tools:text="Repo Name" />
+
+            <ImageView
+                android:id="@+id/img_fork"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:src="@drawable/ic_fork"
+                app:layout_constraintEnd_toStartOf="@+id/text_stars"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginEnd="@dimen/margin_regular" />
+
+            <TextView
+                android:id="@+id/text_stars"
+                style="@style/TextViewSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{repo.stars}"
+                app:layout_constraintBottom_toBottomOf="@+id/img_star"
+                app:layout_constraintEnd_toStartOf="@+id/img_star"
+                app:layout_constraintTop_toTopOf="@+id/img_star"
+                tools:text="Repo Name" />
+
+            <ImageView
+                android:id="@+id/img_star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:src="@drawable/ic_star"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                android:ellipsize="end"
+                android:maxLines="4"
+                android:text="@{repo.description}"
+                app:layout_constraintTop_toBottomOf="@+id/img_owner_avatar" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

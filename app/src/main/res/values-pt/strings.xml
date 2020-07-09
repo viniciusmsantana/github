@@ -1,0 +1,4 @@
+<resources>
+    <!-- Error Messages -->
+    <string name="error_no_pr_found">Nenhum pull request encontrado!</string>
+</resources>
